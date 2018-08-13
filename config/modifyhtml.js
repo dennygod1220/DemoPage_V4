@@ -1,8 +1,5 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
-var events = require('events');
-const emitter = new events.EventEmitter();
-emitter.setMaxListeners(0);
 
 var modifyhtml = {
     modifyhtml: function (socketID, path, funcname) {
@@ -91,14 +88,14 @@ var modifyhtml = {
                     console.log('callback thenewslens_970250')
                 });
             },
-            // 時尚玩家 m 32050 置底
-            supertaste_m_32050: function (data) {
+            // 旅食樂 m 300250 
+            nownews_m_300250: function (data) {
                 var $ = cheerio.load(data);
-                $(".ad_320x50_mo").children().remove();
-                $(".ad_320x50_mo").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:320px;height:50px;" data-ad-zone="4214"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
+                $(".etad").children().remove();
+                $(".etad").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="7930"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
                 
-                fs.writeFile('./public/store/ad_320x50_mo/' + socketID + '/index.html', $.html(), function () {
-                    console.log('callback ad_320x50_mo')
+                fs.writeFile('./public/store/nownews_m_300250/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback nownews_m_300250')
                 });
             },
         }

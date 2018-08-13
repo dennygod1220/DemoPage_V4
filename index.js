@@ -5,9 +5,6 @@ var io = require('socket.io')(server);
 var PORT = 9999;
 app.use(express.static(__dirname + '/public'));
 
-var events = require('events');
-const emitter = new events.EventEmitter()
-emitter.setMaxListeners(0)
 
 //載入模組
 var connection = require('./config/connection');
@@ -134,13 +131,13 @@ app.get('/thenewslens_970250', function (req, res) {
     functionName = 'thenewslens_970250';
     connection(io,siteurl,storeDir,takefilepath,functionName);
 })
-// 時尚玩家 m 32050 置底
-app.get('/supertaste_m_32050', function (req, res) {
-    res.sendfile('public/page/supertaste_m_32050.html');
-    siteurl = 'https://supertaste.tvbs.com.tw/';
-    storeDir = 'public/store/supertaste_m_32050/';
-    takefilepath = './public/store/supertaste_m_32050/';
-    functionName = 'supertaste_m_32050';
+// 旅食樂 m 300250 
+app.get('/nownews_m_300250', function (req, res) {
+    res.sendfile('public/page/nownews_m_300250.html');
+    siteurl = 'http://play.nownews.com/';
+    storeDir = 'public/store/nownews_m_300250/';
+    takefilepath = './public/store/nownews_m_300250/';
+    functionName = 'nownews_m_300250';
     connection(io,siteurl,storeDir,takefilepath,functionName);
 })
 

@@ -1,7 +1,4 @@
 var scrape = require('website-scraper');
-var events = require('events');
-const emitter = new events.EventEmitter();
-emitter.setMaxListeners(0);
 
 function deleteok(io, socket, options) {
 
