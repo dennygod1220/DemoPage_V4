@@ -79,6 +79,15 @@ var modifyhtml = {
                     console.log('callback thenewslens_m_300250')
                 });
             },
+            //關鍵評論網 970250
+            thenewslens_970250: function (data) {
+                var $ = cheerio.load(data);
+                $("#div-gpt-ad-1516246245198-3").children().remove();
+                $("#div-gpt-ad-1516246245198-3").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:970px;height:250px;" data-ad-zone="7965"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
+                fs.writeFile('./public/store/thenewslens_970250/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback thenewslens_970250')
+                });
+            },
         }
     }
 }
