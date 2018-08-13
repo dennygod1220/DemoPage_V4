@@ -108,6 +108,16 @@ var modifyhtml = {
                     console.log('callback nownews_m_32050')
                 });
             },
+            // 女生集合 300250
+            tagsis_300250: function (data) {
+                var $ = cheerio.load(data);
+                $("#content-container > div.article-container > div.ads-box.center").children().remove();
+                $("#content-container > div.article-container > div.ads-box.center").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="7930"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
+
+                fs.writeFile('./public/store/tagsis_300250/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback tagsis_300250')
+                });
+            },
         }
     }
 }

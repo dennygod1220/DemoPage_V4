@@ -149,5 +149,14 @@ app.get('/nownews_m_32050', function (req, res) {
     functionName = 'nownews_m_32050';
     connection(io,siteurl,storeDir,takefilepath,functionName);
 })
+// 女生集合 300250
+app.get('/tagsis_300250', function (req, res) {
+    res.sendfile('public/page/tagsis_300250.html');
+    siteurl = 'http://www.tagsis.com/';
+    storeDir = 'public/store/tagsis_300250/';
+    takefilepath = './public/store/tagsis_300250/';
+    functionName = 'tagsis_300250';
+    connection(io,siteurl,storeDir,takefilepath,functionName);
+})
 
 server.listen(PORT);
