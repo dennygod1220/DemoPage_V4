@@ -93,9 +93,19 @@ var modifyhtml = {
                 var $ = cheerio.load(data);
                 $(".etad").children().remove();
                 $(".etad").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="7930"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
-                
+
                 fs.writeFile('./public/store/nownews_m_300250/' + socketID + '/index.html', $.html(), function () {
                     console.log('callback nownews_m_300250')
+                });
+            },
+            // 旅食樂 m 32050 
+            nownews_m_32050: function (data) {
+                var $ = cheerio.load(data);
+                $("#main-content > div > div.container > div > div").children().remove();
+                $("#main-content > div > div.container > div > div").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:320px;height:50px;" data-ad-zone="4214"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
+
+                fs.writeFile('./public/store/nownews_m_32050/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback nownews_m_32050')
                 });
             },
         }

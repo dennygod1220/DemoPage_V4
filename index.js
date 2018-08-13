@@ -140,5 +140,14 @@ app.get('/nownews_m_300250', function (req, res) {
     functionName = 'nownews_m_300250';
     connection(io,siteurl,storeDir,takefilepath,functionName);
 })
+// 旅食樂 m 32050 
+app.get('/nownews_m_32050', function (req, res) {
+    res.sendfile('public/page/nownews_m_32050.html');
+    siteurl = 'http://play.nownews.com/';
+    storeDir = 'public/store/nownews_m_32050/';
+    takefilepath = './public/store/nownews_m_32050/';
+    functionName = 'nownews_m_32050';
+    connection(io,siteurl,storeDir,takefilepath,functionName);
+})
 
 server.listen(PORT);
