@@ -23,9 +23,7 @@
         .list-group-item {
             padding: 0px
         }
-        #accordion{
-            margin-top:500px;
-        }
+
         @keyframes tipsy {
             0 {
                 transform: translateX(-50%) translateY(-50%) rotate(0deg);
@@ -40,7 +38,7 @@
             background-color: #2e2e31;
         }
 
-        h1 {
+        a {
             color: #fffbf1;
             text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
             font-size: 80px;
@@ -54,8 +52,8 @@
             transform: translateX(-50%) translateY(-50%);
         }
 
-        h1:before,
-        h1:after {
+        a:before,
+        a:after {
             content: '';
             padding: .9em .4em;
             position: absolute;
@@ -68,26 +66,30 @@
             animation: 10s infinite alternate ease-in-out tipsy;
         }
 
-        h1:before {
+        a:before {
             border-color: #d9524a #d9524a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
             z-index: -1;
         }
 
-        h1:after {
+        a:after {
             border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #d9524a #d9524a;
             box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
         }
-
     </style>
 
 </head>
 
 <body>
     <div class="container-fluid">
-        <h1 style="text-align:center;    margin-top: -167px;">廣告素材Demo製作</h1>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <a style="text-align:center">廣告素材Demo製作</a>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
 
-
-        <div id="accordion" id="footer" >
+        <div id="accordion">
             <div class="card">
                 <div class="card-header  bg-primary" id="headingOne">
                     <h3 class="mb-0">
