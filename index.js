@@ -1,3 +1,5 @@
+var fs = require('fs');
+var cheerio = require('cheerio');
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
@@ -177,13 +179,12 @@ app.get('/ck101_m_320480', function (req, res) {
     connection(io,siteurl,storeDir,takefilepath,functionName,true);
 })
 // Pre roll Test
-app.get('/prerolltest', function (req, res) {
-    res.sendfile('public/page/prerolltest.html');
-    siteurl = 'https://www.elevensports.tw/video/cpbl-49';
-    storeDir = 'public/store/prerolltest/';
-    takefilepath = './public/store/prerolltest/';
-    functionName = 'prerolltest';
-    connection(io,siteurl,storeDir,takefilepath,functionName,true);
-})
-
+// app.get('/prerolltest', function (req, res) {
+//     res.sendfile('public/page/prerolltest.html');
+//     siteurl = 'https://www.elevensports.tw/video/cpbl-49';
+//     storeDir = 'public/store/prerolltest/';
+//     takefilepath = './public/store/prerolltest/';
+//     functionName = 'prerolltest';
+//     connection(io,siteurl,storeDir,takefilepath,functionName,true);
+// })
 server.listen(PORT);
