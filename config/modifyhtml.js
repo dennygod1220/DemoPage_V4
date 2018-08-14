@@ -118,6 +118,28 @@ var modifyhtml = {
                     console.log('callback tagsis_300250')
                 });
             },
+            // Bella濃濃 728 90
+            bella_72890: function (data) {
+                var $ = cheerio.load(data);
+                $("#page-content-wrapper > div:nth-child(20) > div > div.hide-mobile").children().remove();
+                $("#page-content-wrapper > div:nth-child(20) > div > div.hide-mobile").append('<ins class="clickforceads" style="display:inline-block;width:728px;height:90px;" data-ad-zone="2888"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>');
+
+                fs.writeFile('./public/store/bella_72890/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback bella_72890')
+                });
+            },
+            // 卡提諾 320 480 蓋板
+            ck101_m_320480: function (data) {
+                var $ = cheerio.load(data);
+                $("#div-gpt-ad-8255481-1").children().remove();
+                $("#div-gpt-ad-8255481-1").append('<ins class="clickforceads" style="display:inline-block;width:320px;height:480px;left:0;top:0;" data-ad-zone="8107"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>')
+                $("#ck_custom_1337 > div > div").children().remove();
+                $("#ck_custom_1337 > div > div").append('<ins class="clickforceads" style="display:inline-block;width:320px;height:480px;left:0;top:0;" data-ad-zone="8107"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>')
+
+                fs.writeFile('./public/store/ck101_m_320480/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback ck101_m_320480')
+                });
+            },
         }
     }
 }

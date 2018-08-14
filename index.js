@@ -158,5 +158,23 @@ app.get('/tagsis_300250', function (req, res) {
     functionName = 'tagsis_300250';
     connection(io,siteurl,storeDir,takefilepath,functionName);
 })
+// Bella濃濃 728 90
+app.get('/bella_72890', function (req, res) {
+    res.sendfile('public/page/bella_72890.html');
+    siteurl = 'https://www.bella.tw/';
+    storeDir = 'public/store/bella_72890/';
+    takefilepath = './public/store/bella_72890/';
+    functionName = 'bella_72890';
+    connection(io,siteurl,storeDir,takefilepath,functionName);
+})
+// 卡提諾 320 480 蓋板
+app.get('/ck101_m_320480', function (req, res) {
+    res.sendfile('public/page/ck101_m_320480.html');
+    siteurl = 'https://ck101.com/thread-4480897-1-1.html?ref=goodcontent';
+    storeDir = 'public/store/ck101_m_320480/';
+    takefilepath = './public/store/ck101_m_320480/';
+    functionName = 'ck101_m_320480';
+    connection(io,siteurl,storeDir,takefilepath,functionName,true);
+})
 
 server.listen(PORT);
