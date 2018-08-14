@@ -176,5 +176,14 @@ app.get('/ck101_m_320480', function (req, res) {
     functionName = 'ck101_m_320480';
     connection(io,siteurl,storeDir,takefilepath,functionName,true);
 })
+// Pre roll Test
+app.get('/prerolltest', function (req, res) {
+    res.sendfile('public/page/prerolltest.html');
+    siteurl = 'https://www.elevensports.tw/video/cpbl-49';
+    storeDir = 'public/store/prerolltest/';
+    takefilepath = './public/store/prerolltest/';
+    functionName = 'prerolltest';
+    connection(io,siteurl,storeDir,takefilepath,functionName,true);
+})
 
 server.listen(PORT);
