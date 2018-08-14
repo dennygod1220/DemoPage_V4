@@ -143,12 +143,12 @@ var modifyhtml = {
             // Pre Roll Test
             prerolltest: function (data) {
                 var $ = cheerio.load(data);
-                // $("#playerContainer").children().remove();
-                // $("#nlplayerhtml5").remove();
-                // $("script[src='js/videoplayer.js']").remove();
+                $("#playerContainer").children().remove();
+                $("#nlplayerhtml5").remove();
+                $("script[src='js/videoplayer.js']").remove();
+                $("#playerContainer").css('text-align','center');
                 // $("#playerContainer").append('<script>function afterClickforceVad(){alert("Hello")}</script><div style="position: fixed;width:300px;height:300px;display:inline-block;vertical-align:baseline;"><ins class="clickforcepreroll" data-ad-zone="8251" data-ad-width="100%" data-ad-height="100%"></ins><script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script></div>')
-                $("#playerContainer").append('<img src="//cdn.doublemax.net/image/creative/20180814/525x250.jpg">')
-                $("#playerContainer").append('<script>function afterClickforceVad(){alert("Hello")}</script><div style="position: fixed;width:300px;height:300px;display:inline-block;vertical-align:baseline;"><ins class="clickforcepreroll" data-ad-zone="8251" data-ad-width="100%" data-ad-height="100%"></ins><script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script></div>')
+                $("#playerContainer").append('<script>function afterClickforceVad(){alert("Hello")}</script><div style="width:960px;height:540px;display:inline-block;vertical-align:baseline;"><ins class="clickforcepreroll" data-ad-zone="8251" data-ad-width="100%" data-ad-height="100%"></ins><script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script></div>')
                 
                 fs.writeFile('./public/store/prerolltest/' + socketID + '/index.html', $.html(), function () {
                     console.log('callback prerolltest')
