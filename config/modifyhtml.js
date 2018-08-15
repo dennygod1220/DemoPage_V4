@@ -146,12 +146,20 @@ var modifyhtml = {
                 $("#playerContainer").children().remove();
                 $("#nlplayerhtml5").remove();
                 $("script[src='js/videoplayer.js']").remove();
-                $("#playerContainer").css('text-align','center');
+                $("#playerContainer").css('text-align', 'center');
                 // $("#playerContainer").append('<script>function afterClickforceVad(){alert("Hello")}</script><div style="position: fixed;width:300px;height:300px;display:inline-block;vertical-align:baseline;"><ins class="clickforcepreroll" data-ad-zone="8251" data-ad-width="100%" data-ad-height="100%"></ins><script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script></div>')
                 $("#playerContainer").append('<script>function afterClickforceVad(){alert("Hello")}</script><div style="width:960px;height:540px;display:inline-block;vertical-align:baseline;"><ins class="clickforcepreroll" data-ad-zone="8251" data-ad-width="100%" data-ad-height="100%"></ins><script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script></div>')
-                
+
                 fs.writeFile('./public/store/prerolltest/' + socketID + '/index.html', $.html(), function () {
                     console.log('callback prerolltest')
+                });
+            },
+            // yahoo_ 內文全屏
+            yahoo_m_scroller: function (data) {
+                var $ = cheerio.load(data);
+                $('<div style="width:100%;text-align:center;"><ins class="clickforceads" style="display:inline-block;width:4px;height:4px;" data-ad-zone="8264"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>').insertBefore("#main-5-ContentStream > ul > li:nth-child(3)");
+                fs.writeFile('./public/store/yahoo_m_scroller/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback yahoo_m_scroller')
                 });
             },
         }

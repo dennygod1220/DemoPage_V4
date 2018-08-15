@@ -178,6 +178,16 @@ app.get('/ck101_m_320480', function (req, res) {
     functionName = 'ck101_m_320480';
     connection(io,siteurl,storeDir,takefilepath,functionName,true);
 })
+// Yahoo 內文全屏 
+app.get('/yahoo_m_scroller', function (req, res) {
+    res.sendfile('public/page/yahoo_m_scroller.html');
+    siteurl = 'https://tw.mobi.yahoo.com/news';
+    storeDir = 'public/store/yahoo_m_scroller/';
+    takefilepath = './public/store/yahoo_m_scroller/';
+    functionName = 'yahoo_m_scroller';
+    connection(io,siteurl,storeDir,takefilepath,functionName,true);
+})
+
 // Pre roll Test
 // app.get('/prerolltest', function (req, res) {
 //     res.sendfile('public/page/prerolltest.html');
