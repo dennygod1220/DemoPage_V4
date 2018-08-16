@@ -43,7 +43,7 @@ app.get('/test', function (req, res) {
     //要下載的網站URL
     siteurl = 'https://www.setn.com/';
 
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 //三立新聞 970250
@@ -53,7 +53,7 @@ app.get('/setn', function (req, res) {
     storeDir = 'public/store/setn/';
     takefilepath = './public/store/setn/';
     functionName = 'setn';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 //三立新聞 手機板 320 480
@@ -63,7 +63,7 @@ app.get('/setn_m_300250', function (req, res) {
     storeDir = 'public/store/setn_m_320480/';
     takefilepath = './public/store/setn_m_320480/';
     functionName = 'setn_m_320480';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 // TVBS 300600
@@ -73,7 +73,7 @@ app.get('/tvbs', function (req, res) {
     storeDir = 'public/store/tvbs/';
     takefilepath = './public/store/tvbs/';
     functionName = 'tvbs';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 // udn 聯合新聞 300250
@@ -83,7 +83,7 @@ app.get('/udn_300250', function (req, res) {
     storeDir = 'public/store/udn_300250/';
     takefilepath = './public/store/udn_300250/';
     functionName = 'udn_300250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 //udn 聯合新聞 手機 300250
@@ -93,7 +93,7 @@ app.get('/udn_m_300250', function (req, res) {
     storeDir = 'public/store/udn_m_300250/';
     takefilepath = './public/store/udn_m_300250/';
     functionName = 'udn_m_300250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 //udn 聯合新聞 手機板 320 480
@@ -103,7 +103,7 @@ app.get('/udn_m_320480', function (req, res) {
     storeDir = 'public/store/udn_m_320480/';
     takefilepath = './public/store/udn_m_320480/';
     functionName = 'udn_m_320480';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
 // 運動世界 300250
@@ -113,7 +113,7 @@ app.get('/sportsv_300250', function (req, res) {
     storeDir = 'public/store/sportsv_300250/';
     takefilepath = './public/store/sportsv_300250/';
     functionName = 'sportsv_300250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 // 關鍵評論網 m 300250
 app.get('/thenewslens_m_300250', function (req, res) {
@@ -122,7 +122,7 @@ app.get('/thenewslens_m_300250', function (req, res) {
     storeDir = 'public/store/thenewslens_m_300250/';
     takefilepath = './public/store/thenewslens_m_300250/';
     functionName = 'thenewslens_m_300250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 // 關鍵評論網 970250
 app.get('/thenewslens_970250', function (req, res) {
@@ -131,7 +131,7 @@ app.get('/thenewslens_970250', function (req, res) {
     storeDir = 'public/store/thenewslens_970250/';
     takefilepath = './public/store/thenewslens_970250/';
     functionName = 'thenewslens_970250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 // 旅食樂 m 300250 
 app.get('/nownews_m_300250', function (req, res) {
@@ -140,7 +140,7 @@ app.get('/nownews_m_300250', function (req, res) {
     storeDir = 'public/store/nownews_m_300250/';
     takefilepath = './public/store/nownews_m_300250/';
     functionName = 'nownews_m_300250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 // 旅食樂 m 32050 
 app.get('/nownews_m_32050', function (req, res) {
@@ -149,7 +149,7 @@ app.get('/nownews_m_32050', function (req, res) {
     storeDir = 'public/store/nownews_m_32050/';
     takefilepath = './public/store/nownews_m_32050/';
     functionName = 'nownews_m_32050';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 // 女生集合 300250
 app.get('/tagsis_300250', function (req, res) {
@@ -158,7 +158,7 @@ app.get('/tagsis_300250', function (req, res) {
     storeDir = 'public/store/tagsis_300250/';
     takefilepath = './public/store/tagsis_300250/';
     functionName = 'tagsis_300250';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
 })
 // Bella濃濃 728 90
 app.get('/bella_72890', function (req, res) {
@@ -167,7 +167,7 @@ app.get('/bella_72890', function (req, res) {
     storeDir = 'public/store/bella_72890/';
     takefilepath = './public/store/bella_72890/';
     functionName = 'bella_72890';
-    connection(io,siteurl,storeDir,takefilepath,functionName);
+    connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 // 卡提諾 320 480 蓋板
 app.get('/ck101_m_320480', function (req, res) {
@@ -176,7 +176,7 @@ app.get('/ck101_m_320480', function (req, res) {
     storeDir = 'public/store/ck101_m_320480/';
     takefilepath = './public/store/ck101_m_320480/';
     functionName = 'ck101_m_320480';
-    connection(io,siteurl,storeDir,takefilepath,functionName,true);
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
 })
 // Yahoo 內文全屏 
 app.get('/yahoo_m_scroller', function (req, res) {
@@ -185,7 +185,7 @@ app.get('/yahoo_m_scroller', function (req, res) {
     storeDir = 'public/store/yahoo_m_scroller/';
     takefilepath = './public/store/yahoo_m_scroller/';
     functionName = 'yahoo_m_scroller';
-    connection(io,siteurl,storeDir,takefilepath,functionName,true);
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
 })
 
 // Pre roll Test
