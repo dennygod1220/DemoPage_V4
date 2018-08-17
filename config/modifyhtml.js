@@ -63,13 +63,7 @@ var modifyhtml = {
                     console.log('callback setn')
                 });
             },
-            //運動世界
-            sportsv_300250: function (data) {
-                var $ = cheerio.load(data);
-                fs.writeFile('./public/store/sportsv_300250/' + socketID + '/index.html', $.html(), function () {
-                    console.log('callback sportsv_300250')
-                });
-            },
+
             //關鍵評論網 m 300250
             thenewslens_m_300250: function (data) {
                 var $ = cheerio.load(data);

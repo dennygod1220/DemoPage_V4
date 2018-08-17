@@ -106,15 +106,7 @@ app.get('/udn_m_320480', function (req, res) {
     connection(io, siteurl, storeDir, takefilepath, functionName);
 })
 
-// 運動世界 300250
-app.get('/sportsv_300250', function (req, res) {
-    res.sendfile('public/page/sportsv_300250.html');
-    siteurl = 'https://www.sportsv.net/';
-    storeDir = 'public/store/sportsv_300250/';
-    takefilepath = './public/store/sportsv_300250/';
-    functionName = 'sportsv_300250';
-    connection(io, siteurl, storeDir, takefilepath, functionName);
-})
+
 // 關鍵評論網 m 300250
 app.get('/thenewslens_m_300250', function (req, res) {
     res.sendfile('public/page/thenewslens_m_300250.html');
