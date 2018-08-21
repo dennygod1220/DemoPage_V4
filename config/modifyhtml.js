@@ -158,6 +158,14 @@ var modifyhtml = {
                     console.log('callback yahoo_m_scroller')
                 });
             },
+            //痞客幫 手機蓋板 320480
+            pixnet_m_320480: function (data) {
+                var $ = cheerio.load(data);
+                $('<div style="position:fixed;z-index: 99999;width: 100%;height: 100%;"> <div style = "width: 320px;height: 480px;position: absolute;margin-left: 13%;margin-top: 32%;" ><ins class = "clickforceads"style = "display:inline-block;width:320px;height:480px;left:0;top:0;"data-ad-zone = "8107" > </ins> <script async type = "text/javascript"src = "//cdn.doublemax.net/js/init.js" > < /script> </div> </div>').insertBefore("#main")
+                fs.writeFile(path + socketID + '/index.html', $.html(), function () {
+                    console.log('callback pixnet')
+                });
+            },
         }
     }
 }

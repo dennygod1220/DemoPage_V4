@@ -179,7 +179,15 @@ app.get('/yahoo_m_scroller', function (req, res) {
     functionName = 'yahoo_m_scroller';
     connection(io, siteurl, storeDir, takefilepath, functionName, true);
 })
-
+// 痞客邦 320 480 蓋板 手機(有衝突可能)
+app.get('/pixnet_m_320480', function (req, res) {
+    res.sendfile('public/page/pixnet_m_320480.html');
+    siteurl = 'https://vivianchiu.pixnet.net/blog/category/1884106';
+    storeDir = 'public/store/pixnet_m_320480/';
+    takefilepath = './public/store/pixnet_m_320480/';
+    functionName = 'pixnet_m_320480';
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
+})
 // Pre roll Test
 // app.get('/prerolltest', function (req, res) {
 //     res.sendfile('public/page/prerolltest.html');
