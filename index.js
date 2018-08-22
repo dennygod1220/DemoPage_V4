@@ -188,6 +188,15 @@ app.get('/pixnet_m_320480', function (req, res) {
     functionName = 'pixnet_m_320480';
     connection(io, siteurl, storeDir, takefilepath, functionName, true);
 })
+// Juksy 320 480 蓋板 手機(有衝突可能)
+app.get('/juksy_m_320480', function (req, res) {
+    res.sendfile('public/page/juksy_m_320480.html');
+    siteurl = 'https://m.juksy.com/archives/81559';
+    storeDir = 'public/store/juksy_m_320480/';
+    takefilepath = './public/store/juksy_m_320480/';
+    functionName = 'juksy_m_320480';
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
+})
 // Pre roll Test
 // app.get('/prerolltest', function (req, res) {
 //     res.sendfile('public/page/prerolltest.html');
