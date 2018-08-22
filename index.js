@@ -197,13 +197,22 @@ app.get('/juksy_m_320480', function (req, res) {
     functionName = 'juksy_m_320480';
     connection(io, siteurl, storeDir, takefilepath, functionName, true);
 })
+// 三立新聞 320 480 蓋板 手機(有衝突可能)
+app.get('/setn_m_320480', function (req, res) {
+    res.sendfile('public/page/setn_m_320480.html');
+    siteurl = 'https://www.setn.com/m/';
+    storeDir = 'public/store/setn_m_320480/';
+    takefilepath = './public/store/setn_m_320480/';
+    functionName = 'setn_m_320480';
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
+})
 // Pre roll Test
-// app.get('/prerolltest', function (req, res) {
-//     res.sendfile('public/page/prerolltest.html');
-//     siteurl = 'https://www.elevensports.tw/video/cpbl-49';
-//     storeDir = 'public/store/prerolltest/';
-//     takefilepath = './public/store/prerolltest/';
-//     functionName = 'prerolltest';
-//     connection(io,siteurl,storeDir,takefilepath,functionName,true);
-// })
+app.get('/CPBLTV_pre', function (req, res) {
+    res.sendfile('public/page/setn_m_320480.html');
+    siteurl = 'https://www.cpbltv.com/vod.php?vod_id=29257';
+    storeDir = 'public/store/CPBLTV_pre/';
+    takefilepath = './public/store/CPBLTV_pre/';
+    functionName = 'CPBLTV_pre';
+    connection(io, siteurl, storeDir, takefilepath, functionName, true);
+})
 server.listen(PORT);

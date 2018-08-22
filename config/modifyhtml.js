@@ -174,6 +174,15 @@ var modifyhtml = {
                     console.log('callback juksy')
                 });
             },
+            //三立 手機蓋板 320480
+            setn_m_320480: function (data) {
+                var $ = cheerio.load(data);
+                $('#ad').children().remove();
+                $("#ad").append('<ins class = "clickforceads"style = "display:inline-block;width:320px;height:480px;left:0;top:0;"data-ad-zone = "8107"> </ins> <script async type = "text/javascript"src = "//cdn.doublemax.net/js/init.js"></script>')
+                fs.writeFile(path + socketID + '/index.html', $.html(), function () {
+                    console.log('callback 三立')
+                });
+            },
         }
     }
 }
