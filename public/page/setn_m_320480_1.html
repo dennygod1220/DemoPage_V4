@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="./IP_config.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2 id="talk">請填入素材ID 只能是320480的歐</h2>
+        <br>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button id="sendbtn" class="btn btn-outline-secondary" type="button">送出</button>
+            </div>
+            <input type="text" id="creativeID" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+        </div>
+    </div>
+
+    <script>
+        $("#sendbtn").click(function () {
+            var id = $("#creativeID").val();
+            window.location.assign(MyServerIP + ':' + MyServerPort + '/store/setn_m_320480/fake_setn.html' +
+                '?cfadc=8314:' + id, '_blank');
+        });
+    </script>
+</body>
+
+</html>
