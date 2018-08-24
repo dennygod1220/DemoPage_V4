@@ -162,7 +162,7 @@ var modifyhtml = {
             pixnet_m_320480: function (data) {
                 var $ = cheerio.load(data);
 
-                $('<div style="position:fixed;width:100%;height:100%;text-align: center;background-color: rgba(111, 111, 111, 0.5);z-index: 99999999;"><div style="height:50px"></div>        <div style="position:absolute;background-color:rgba(50,50,50,0.5);;width: 45px;height: 45px;border-radius: 30px;display: inline-block;    margin-left: 275px;"><p style="font-size: 23px;font-weight: bold;color: white;margin-top: 4px;">X</p></div><ins class="clickforceads" style="display:inline-block;width:320px;height:480px;left:0;top:0;" data-ad-zone="8314"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>').insertBefore("#main")
+                $('<div style="position:fixed;width:100%;height:100%;text-align: center;background-color: rgba(111, 111, 111, 0.5);z-index: 99999999;"><div style="height:50px"></div><div style="position:absolute;background-color:rgba(50,50,50,0.5);;width: 45px;height: 45px;border-radius: 30px;display: inline-block;  "><p style="font-size: 23px;font-weight: bold;color: white;margin-top: 4px;">X</p></div><ins class="clickforceads" style="display:inline-block;width:320px;height:480px;left:0;top:0;" data-ad-zone="8314"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>').insertBefore("#main")
                 fs.writeFile(path + socketID + '/index.html', $.html(), function () {
                     console.log('callback pixnet')
                 });
