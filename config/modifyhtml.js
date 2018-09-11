@@ -185,6 +185,24 @@ var modifyhtml = {
                     console.log('callback 三立')
                 });
             },
+
+            //樂時尚800600 PC蓋板
+            styletc_800600: function (data) {
+                var $ = cheerio.load(data);
+                $('<ins class="clickforceads" style="display:inline-block;width:800px;height:600px;left:0;top:0;" data-ad-zone="8409"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>').insertBefore('#mobile-ad-box');
+                $(".clickforceads").css('top','0px');
+                $(".clickforceads").css('width','100%');
+                $(".clickforceads").css('height','100%');
+                $(".clickforceads").css('background','rgb(0, 0, 0)');
+                $(".clickforceads").css('text-align','center');
+                $(".clickforceads").css('opacity','0.3');
+
+
+                // $("#home").append('<ins class="clickforceads" style="display:inline-block;width:800px;height:600px;left:0;top:0;" data-ad-zone="8409"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>')
+                fs.writeFile('./public/store/styletc_800600/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback styletc_800600 ')
+                });
+            },
         }
     }
 }

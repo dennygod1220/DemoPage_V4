@@ -210,4 +210,25 @@ app.get("/litv_pre", function (req, res) {
   functionName = "litv_pre";
   connection(io, siteurl, storeDir, takefilepath, functionName, true);
 });
+
+
+//旅食樂 800600蓋板
+app.get("/nownews_800600", function (req, res) {
+  res.sendfile("public/page/nownews_800600.html");
+  siteurl = "http://play.nownews.com/";
+  storeDir = "public/store/nownews_800600/";
+  takefilepath = "./public/store/nownews_800600/";
+  functionName = "nownews_800600";
+  connection(io, siteurl, storeDir, takefilepath, functionName);
+});
+
+//樂時尚 800600蓋板
+app.get("/styletc_800600", function (req, res) {
+  res.sendfile("public/page/styletc_800600.html");
+  siteurl = "http://www.styletc.com/";
+  storeDir = "public/store/styletc_800600/";
+  takefilepath = "./public/store/styletc_800600/";
+  functionName = "styletc_800600";
+  connection(io, siteurl, storeDir, takefilepath, functionName);
+});
 server.listen(PORT);
