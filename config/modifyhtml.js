@@ -191,6 +191,8 @@ var modifyhtml = {
                 var $ = cheerio.load(data);
                 $('<ins class="clickforceads" style="display:inline-block;width:800px;height:600px;left:0;top:0;" data-ad-zone="8409"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>').insertBefore('#mobile-ad-box');
                 $(".clickforceads").css('top','0px');
+                $(".clickforceads").css('position','fixed');
+                $(".clickforceads").css('z-index','9999');
                 $(".clickforceads").css('width','100%');
                 $(".clickforceads").css('height','100%');
                 $(".clickforceads").css('background','rgb(0, 0, 0)');
