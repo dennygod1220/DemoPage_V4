@@ -73,6 +73,16 @@ var modifyhtml = {
                     console.log('callback thenewslens_m_300250')
                 });
             },
+            //關鍵評論網 m 300250 cover
+            thenewslens_m_300250_cover: function (data) {
+                var $ = cheerio.load(data);
+                $('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="7930"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>').insertBefore("#tnl-index");
+                // $("#div-gpt-ad-1516246245198-3").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="7930"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
+                fs.writeFile('./public/store/thenewslens_m_300250_cover/' + socketID + '/index.html', $.html(), function () {
+                    console.log('callback thenewslens_m_300250_cover')
+                });
+            },
+
             //關鍵評論網 970250
             thenewslens_970250: function (data) {
                 var $ = cheerio.load(data);
@@ -190,14 +200,14 @@ var modifyhtml = {
             styletc_800600: function (data) {
                 var $ = cheerio.load(data);
                 $('<ins class="clickforceads" style="display:inline-block;width:800px;height:600px;left:0;top:0;" data-ad-zone="8409"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>').insertBefore('#mobile-ad-box');
-                $(".clickforceads").css('top','0px');
-                $(".clickforceads").css('position','fixed');
-                $(".clickforceads").css('z-index','9999');
-                $(".clickforceads").css('width','100%');
-                $(".clickforceads").css('height','100%');
-                $(".clickforceads").css('background','rgb(0, 0, 0)');
-                $(".clickforceads").css('text-align','center');
-                $(".clickforceads").css('opacity','0.3');
+                $(".clickforceads").css('top', '0px');
+                $(".clickforceads").css('position', 'fixed');
+                $(".clickforceads").css('z-index', '9999');
+                $(".clickforceads").css('width', '100%');
+                $(".clickforceads").css('height', '100%');
+                $(".clickforceads").css('background', 'rgb(0, 0, 0)');
+                $(".clickforceads").css('text-align', 'center');
+                $(".clickforceads").css('opacity', '0.3');
 
 
                 // $("#home").append('<ins class="clickforceads" style="display:inline-block;width:800px;height:600px;left:0;top:0;" data-ad-zone="8409"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>')

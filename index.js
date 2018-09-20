@@ -110,6 +110,17 @@ app.get("/thenewslens_m_300250", function (req, res) {
   functionName = "thenewslens_m_300250";
   connection(io, siteurl, storeDir, takefilepath, functionName);
 });
+
+// 關鍵評論網 m 300250 蓋板位置
+app.get("/thenewslens_m_300250_cover", function (req, res) {
+  res.sendfile("public/page/thenewslens_m_300250_cover.html");
+  siteurl = "https://www.thenewslens.com/";
+  storeDir = "public/store/thenewslens_m_300250_cover/";
+  takefilepath = "./public/store/thenewslens_m_300250_cover/";
+  functionName = "thenewslens_m_300250_cover";
+  connection(io, siteurl, storeDir, takefilepath, functionName);
+});
+
 // 關鍵評論網 970250
 app.get("/thenewslens_970250", function (req, res) {
   res.sendfile("public/page/thenewslens_970250.html");
@@ -231,4 +242,5 @@ app.get("/styletc_800600", function (req, res) {
   functionName = "styletc_800600";
   connection(io, siteurl, storeDir, takefilepath, functionName);
 });
+
 server.listen(PORT);
