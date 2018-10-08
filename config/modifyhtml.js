@@ -21,6 +21,7 @@ var modifyhtml = {
             setn: function (data) {
                 var $ = cheerio.load(data);
                 $("script[src='advertisement']").remove();
+                $(".banner-970x250").css('text-align','center');
                 $('<ins class="clickforceads" style="display:inline-block;width:970px;height:250px;" data-ad-zone="7965"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script>').insertAfter('#bar_ad');
                 fs.writeFile(path + socketID + '/index.html', $.html(), function () {
                     console.log('callback setn')
