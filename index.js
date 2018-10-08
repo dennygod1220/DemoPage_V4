@@ -222,6 +222,17 @@ app.get("/litv_pre", function (req, res) {
   connection(io, siteurl, storeDir, takefilepath, functionName, true);
 });
 
+// CPBLTV Pre roll Test
+app.get("/CPBL_TV_PRE", function (req, res) {
+  res.sendfile("public/page/CPBL_TV_PRE.html");
+  siteurl =
+    "https://www.cpbltv.com/vod.php?vod_id=30185";
+  storeDir = "public/store/CPBL_TV_PRE/";
+  takefilepath = "./public/store/CPBL_TV_PRE/";
+  functionName = "CPBL_TV_PRE";
+  connection(io, siteurl, storeDir, takefilepath, functionName, true);
+});
+
 
 //旅食樂 800600蓋板
 app.get("/nownews_800600", function (req, res) {
@@ -243,4 +254,15 @@ app.get("/styletc_800600", function (req, res) {
   connection(io, siteurl, storeDir, takefilepath, functionName);
 });
 
+
+
+// 0928 給尼克的測試網頁下載
+app.get("/clickforce", function (req, res) {
+  res.sendfile("public/page/clickforce.html");
+  siteurl = "http://www.clickforce.com.tw/";
+  storeDir = "public/store/clickforce/";
+  takefilepath = "./public/store/clickforce/";
+  functionName = "clickforce";
+  connection(io, siteurl, storeDir, takefilepath, functionName);
+});
 server.listen(PORT);

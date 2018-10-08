@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>CPBLTV</title>
+  <link href="css/reset.css" rel="stylesheet" type="text/css">
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+
+  <script src="js/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="//cpbltv-elta.cdn.hinet.net/js/jquery-1.10.2.min.js">\x3C/script>')
+  </script>
+  <script src="js/jquery.cookie.min.js" charset="utf-8"></script>
+  <script src="js/DRKlyzvs.js"></script>
+  <script>
+    function call_play(type, vod_id, autoPlay, pbyear, gameno, game_id, date) {
+      pbyear = typeof (pbyear) != 'undefind' && /^[0-9]+$/.test(pbyear) == true ? pbyear : '';
+      gameno = typeof (gameno) != 'undefind' && /^[0-9]+$/.test(gameno) == true ? gameno : '';
+      game_id = typeof (game_id) != 'undefind' && /^[0-9]+$/.test(game_id) == true ? game_id : '';
+      date = typeof (date) != 'undefind' && /^[0-9\-]+$/.test(date) == true ? date : '';
+      vod_id = typeof (vod_id) != 'undefind' && /^[0-9]+$/.test(vod_id) == true ? vod_id : '';
+
+      var width = 960;
+      var height = 540;
+
+      var _url = '/player/vod.php?&type=' + type + '&width=' + width + '&height=' + height + '&id=' + vod_id +
+        '&autoPlay=' + autoPlay + '&pbyear=' + pbyear + '&gameno=' + gameno + '&game_id=' + game_id + '&date=' + date +
+        '&' + Math.random();
+
+      //   $.ajax({
+      //     url : _url,
+      //     cache : false ,
+      //     dataType : 'json',
+      //     data : {'type':type, 'width':width, 'height':height, 'id':vod_id, 'autoPlay':autoPlay, 'pbyear':pbyear, 'gameno':gameno, 'game_id':game_id, 'date':date},
+      //     type : 'post',
+      //     success : function(data, status, xhr){
+      //       if (data.result == true){
+      //         try{
+      //           //alert(JSON.stringify(data));
+      //           $('#play_box').html(data.html);
+      //           //eval($(data.html).find("script").text());
+      //           if (!$('#cf-pre-load-vad-box').length) {
+      //             console.log('CF!');
+      //           }
+      //         }
+      //         catch (e){ }
+      //       }
+      //       else{
+      //         alert(data.msg );
+      //         if (data.code=='V901'){ top.location.href='/member/login.php'; return false; }
+      // //         else if (data.code=='P105'){ top.location.href='/member/device.php'; return false; }
+      //       }
+      //     },
+      //     error : function(xhr, status, erorr){
+      //       console.log(erorr);
+
+      //       alert('錯誤,請稍候在試.');
+      //     }
+      //   });
+    }
+
+    function afterClickforceVad(e) {
+      console.log(2);
+      var elem = document.getElementById('cf-pre-load-vad-box');
+      if (elem) {
+        elem.style.display = 'none';
+        call_play('2', '30185', '0', '', '01', '2', '230');
+      }
+    }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5QJPDZS');
+  </script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="ns.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</head>
+
+<body>
+
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=287875108029498&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+
+
+  <!--上方選單-start-->
+  <div class="top_bar">
+    <div class="top_wrap">
+      <a href="/index.html"><img src="images/cpbl_logo.png"></a>
+      <ul class="top_nav">
+        <li><a href="/index2.html">影音直播</a></li>
+        <li><a href="/lists.php">完整賽事</a></li>
+        <li><a href="/highlight.php">精采短片</a></li>
+        <li><a href="/history.php">精選歷史賽事</a></li>
+        <li><a href="/pay/buy_set1.php">我要購買</a></li>
+        <li><a href="/member/order.php">帳號管理</a></li>
+        <li><a href="/faq.php">常見問題</a></li>
+        <li><a href="http://www.cpbl.com.tw/">CPBL</a></li>
+        <li class="login" id="bar_member_login"><a href="/member/login.php">登入</a></li>
+        <li class="logout" id="bar_member_logout"><a href="/member/logout.php">登出</a></li>
+
+      </ul>
+
+
+      <ul class="btn_group">
+        <li class="fb"><a href="https://www.facebook.com/heartbaseball?fref=ts" target="_blank"></a></li>
+        <li class="google"><a href="https://plus.google.com/+CPBL/posts" target="_blank"></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--上方選單-end-->
+
+
+  <script>
+    try {
+      var _uloged = $.cookie("_uloged");
+      _uloged = /^[0-9]{1}$/.test(_uloged) ? "1" : "0";
+      if (_uloged == "1") {
+        $('#bar_member_login').hide();
+      } else {
+        $('#bar_member_logout').hide();
+      }
+      delete _uloged;
+    } catch (e) {
+      $('#bar_member_logout').hide();
+    }
+  </script>
+
+
+  <!--影片播放區塊start-->
+  <div class="wrap column live_play">
+    <h2>HIGHLIGHTS<span>精彩短片</span></h2>
+
+    <script>
+      call_play('2', '30185', '0', '', '01', '2', '230');
+    </script>
+
+    <div class="play_box" id="play_box" style="width:960px; height:540px;">
+      <script>
+        function afterClickforceVad() {
+          console.log('afterClickforceVad');
+          //沒有廣告或廣告播畢後會呼叫此function
+          var v = document.getElementById('play_box');
+          var ytb = document.createElement('iframe');
+          // ytb.src = 'https://www.youtube.com/embed/P9SzcEiAf18?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1';
+          ytb.src = 'https://www.youtube.com/embed/Ce5oLOlEzOw?rel=0&amp;controls=0&amp;showinfo=0&autoplay=0';
+
+          ytb.style.width = '960px';
+          ytb.style.height = '540px';
+          ytb.setAttribute('frameborder', 0);
+          v.appendChild(ytb);
+        }
+      </script>
+      <ins class="clickforcepreroll" data-ad-zone="7177" data-ad-width="960" data-ad-height="540" data-ad-mute=""
+        data-ad-moAutoplay='true'></ins>
+      <script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script>
+      <!-- <ins class="clickforcepreroll" data-ad-zone="8483" data-ad-width="960" data-ad-height="540" data-ad-mute=""
+        data-ad-moAutoplay='true'></ins>
+      <script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script> -->
+      <!-- <ins class="clickforcepreroll" data-ad-zone="8482" data-ad-width="960" data-ad-height="540"></ins>
+      <script type="text/javascript" src="//cdn.doublemax.net/js/cfvast.js"></script> -->
+    </div>
+    <h3>賽前，魔法神童-汝汝與杉杉帶來精彩的賽前魔術表演與開球儀式</h3>
+    <div class="time">影片長度：01:58</div>
+    <div class="wacth">觀賞人數：<span class="font18">35</span></div>
+    <div class="clearfix"></div>
+    <div class="update">更新時間：2018/09/23</div>
+    <div class="like">
+      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like"
+        data-show-faces="true" data-share="false"></div>
+    </div>
+    <div class="clearfix"></div>
+    <font size="3"></font>
+  </div>
+
+  <!--影片播放區塊end-->
+
+  <div class="wrap clearfix" style="display: block; text-align: center;">
+    <div style="width:720px; margin:0 auto;">
+    </div>
+  </div>
+
+
+  <!--HIGHLIGHT-start-->
+  <div class="wrap column">
+    <h2>HIGHLIGHTS<span>精彩短片</span></h2>
+    <ul class="pv-list">
+
+
+      <li onclick="top.location.href='/vod.php?vod_id=30220';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30220"><img src="images/20180923e680dd2da2a4.png"></a>
+        </div>
+        <div class="text">230&nbsp;賽後，LamiGirls帶來全新單曲 Love Me More 舞蹈，讓球場愈夜愈美麗</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30219';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30219"><img src="images/2018092342329b658315.png"></a>
+        </div>
+        <div class="text">230&nbsp;賽後，陳俊秀狀況火燙，單場四打數三安打猛打賞！</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30218';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30218"><img src="images/20180923b8f56d3c4f1d.png"></a>
+        </div>
+        <div class="text">230&nbsp;賽後，王溢正主投六局僅失二分優質先發，獲選單場MVP</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30217';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30217"><img src="images/20180923595764e2b0dd.png"></a>
+        </div>
+        <div class="text">230&nbsp;九局上，鄉長陳禹勳上場救援，乾淨俐落的三上三下，助球隊收下八連勝</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30216';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30216"><img src="images/20180923a6c73dfc58d3.png"></a>
+        </div>
+        <div class="text">230&nbsp;八局下，朱育賢連續兩天狙擊賴鴻誠！在陳俊秀敲安後，立刻把握機會打下保險分</div>
+      </li>
+      <div style="clear:both; widht:95%;"></div>
+      <li onclick="top.location.href='/vod.php?vod_id=30215';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30215"><img src="images/2018092385474a1ab916.png"></a>
+        </div>
+        <div class="text">230&nbsp;八局上，林柏佑上場中繼，表現沉穩，飆出1K讓富邦打者三上三下</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30214';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30214"><img src="images/20180923cb3e709cea08.png"></a>
+        </div>
+        <div class="text">230&nbsp;七局下，羅力用球數破百依然神勇，雖被擊出一支安打，但仍有效壓制Lamigo打線</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30213';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30213"><img src="images/20180923206dcf2cc97d.png"></a>
+        </div>
+        <div class="text">230&nbsp;七局上，「天天哲」吳丞哲打卡上班，搭配梁家榮美技演出，聯手封鎖富邦打線</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30212';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30212"><img src="images/201809231cb58193981f.png"></a>
+        </div>
+        <div class="text">230&nbsp;六局下，Lamigo打線雖遭羅力封鎖，但廖健富拚戰精神滿分，期盼傷勢無大礙</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30211';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30211"><img src="images/20180923f229d1013597.png"></a>
+        </div>
+        <div class="text">230&nbsp;六局上，挑戰成功！林哲瑄敲出安打後發動盜壘，可惜透過輔助判決判定盜壘失敗</div>
+      </li>
+      <div style="clear:both; widht:95%;"></div>
+      <li onclick="top.location.href='/vod.php?vod_id=30210';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30210"><img src="images/201809239b3337c1baf9.png"></a>
+        </div>
+        <div class="text">230&nbsp;中場，LamiGirls帶來精彩的舞蹈表演</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30203';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30203"><img src="images/20180923f7fc73ef5bdf.png"></a>
+        </div>
+        <div class="text">230&nbsp;五局下，羅力持續繳出好投，再次投出三上三下！</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30202';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30202"><img src="images/20180923aabc2c03686d.png"></a>
+        </div>
+        <div class="text">230&nbsp;五局上，富邦打線甦醒，張正偉獲得保送後，胡金龍與蔣智賢連續安打扳回一分</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30201';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30201"><img src="images/20180923d49f674f42bf.png"></a>
+        </div>
+        <div class="text">230&nbsp;四局下，羅力無懼隊友再次失誤，用穩健的投球，力保不失分</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30200';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30200"><img src="images/201809238d7f9941d976.png"></a>
+        </div>
+        <div class="text">230&nbsp;四局上，王溢正面臨無人出局一二壘有人的局面，臨危不亂一一解決打者</div>
+      </li>
+      <div style="clear:both; widht:95%;"></div>
+      <li onclick="top.location.href='/vod.php?vod_id=30199';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30199"><img src="images/2018092342e7f752ddba.png"></a>
+        </div>
+        <div class="text">230&nbsp;三局下，哪裡跌倒哪裡站起！富邦靠著漂亮守備瓦解Lamigo攻勢</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30198';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30198"><img src="images/20180923750de3c8928a.png"></a>
+        </div>
+        <div class="text">230&nbsp;三局下，又是失誤！Lamigo再次把握失誤機會，藉著盜壘與安打，再添一分</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30197';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30197"><img src="images/201809239965d243f9a6.png"></a>
+        </div>
+        <div class="text">230&nbsp;三局上，王溢正持續穩定表現，投出完美的三上三下半局</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30196';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30196"><img src="images/20180923cd927c5329a2.png"></a>
+        </div>
+        <div class="text">230&nbsp;二局上，王溢正沒有受到隊友失誤影響，穩穩地抓下三個出局數</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30195';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30195"><img src="images/20180923a305ba0283fc.png"></a>
+        </div>
+        <div class="text">230&nbsp;一局下，失誤來亂！Lamigo靠著守備失誤開啟攻勢，加上打線爭氣，超前比數</div>
+      </li>
+      <div style="clear:both; widht:95%;"></div>
+      <li onclick="top.location.href='/vod.php?vod_id=30194';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30194"><img src="images/20180923104b57be306f.png"></a>
+        </div>
+        <div class="text">230&nbsp;一局上，胡金龍砲聲隆隆！首局就從王溢正手中掃出一發陽春全壘打，先馳得點</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30185';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30185"><img src="images/201809236f9d96e6e01f.png"></a>
+        </div>
+        <div class="text">230&nbsp;賽前，魔法神童-汝汝與杉杉帶來精彩的賽前魔術表演與開球儀式</div>
+      </li>
+
+      <li onclick="top.location.href='/vod.php?vod_id=30184';">
+        <div class="pv-img pointer">
+          <div class="pv-play1"></div>
+          <a href="/vod.php?vod_id=30184"><img src="images/201809231593f6b37fac.png"></a>
+        </div>
+        <div class="text">230&nbsp;賽前，LamiGirls帶來「甜蜜魔法」開場舞蹈，炒熱賽前現場氣氛</div>
+      </li>
+
+
+    </ul>
+  </div>
+  <!--HIGHLIGHT-end-->
+
+
+  <div class="caseBox">
+    <!--左廣告-->
+    <div class="adLeft">
+    </div>
+    <!--右廣告-->
+    <div class="adRight">
+    </div>
+  </div>
+
+
+
+
+  <!--頁尾start-->
+  <div class="footer">
+    <div class="wrap">
+      <div class="footer_logo"><a href="/index.html"><img src="images/logo-1.png"></a></div>
+      <div class="group_logo">
+        <div><img src="images/f_brologo.png">
+          <img src="images/f_lionlogo.png">
+          <img src="images/f_lamlogo.png">
+          <img src="images/f_guardians.png"></div>
+      </div>
+      <ul class="footer_nav">
+        <li><a href="http://www.cpbl.com.tw/footer/contact/">聯絡我們</a></li>
+        <li><a href="mailto:adall@elta.com.tw">刊登廣告</a></li>
+      </ul>
+      <div class="copyright">Copyright ©2014 Chinese Professional Baseball League.All rights reserved.</div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <!--頁尾end-->
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-48829844-1', 'cpbltv.com');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <script src="js/scripts.js" charset="utf-8"></script>
+  <script>
+    var vod_id = 30185;
+
+    $(document).ready(function () {
+      try {
+        var _count = typeof ($.cookie('_count')) != 'undefined' ? $.cookie('_count').split('_') : [];
+        if (/[0-9]/.test(vod_id) && _count.indexOf(vod_id + "") == '-1') {
+          setTimeout(function () {
+            $.ajax({
+              url: '/api/count/vod.php?vod=' + vod_id,
+              cache: false,
+              dataType: 'json',
+              data: {
+                'vod_id': vod_id
+              },
+              type: 'post',
+              success: function (data, status, xhr) {},
+              error: function (xhr, status, erorr) {}
+            });
+          }, 1000);
+        }
+      } catch (e) {}
+    });
+  </script>
+  <!--
+www/vod.php-->
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PreRoll_CPBLTV 測試</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="page/loading.css">
+    <script src="./page/IP_config.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="height:50px;">
+
+        </div>
+        <div id="test">
+            <div class="loader">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+
+                <div class="covers">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+            </div>
+            <h1 id="link">準備中...請稍後</h1>
+        </div>
+    </div>
+
+
+    <script>
+        var socket = io();
+        var name = "Client Test";
+        socket.emit('delete ok');
+        $("#link").text("正在為您下載 CPBL_TV 測試...");
+
+        socket.once('downloadOK', function () {
+
+            $("#link").text("下載完成");
+            $(
+                '<br> <h2>請注意!!!! 要播出指定素材請先執行以下動作:</h2><br> <h3>1.到SSP修改版位8251所指向的訂單</h3><br><h3>2.於DSP中在指定的訂單下建立PreRoll素材</h3><br><h3>3.於DSP中在指定的訂單下建立PreRoll策略並指定素材及版位</h3> <br> <button id="sendbtn" class="btn btn-outline-secondary" type="button">送出</button>'               
+            ).insertAfter('#link');
+            $(".loader").hide();
+            $("#sendbtn").click(function () {
+                $(".loader").show();
+                var creativeID = $("#creativeID").val();
+                socket.emit('creative id', creativeID);
+                $("#sendbtn").remove();
+                $("#talk").remove();
+                $("#creativeID").remove();
+                $("#link").text("伺服器正在竄改網頁中，請再稍等...");
+            })
+        });
+
+        socket.once('modifyOK', function (data) {
+            console.log("reload")
+            window.location.assign(MyServerIP+':'+MyServerPort+'/store/CPBL_TV_PRE/' + socket.id,'_blank');
+            })
+    </script>
+</body>
+
+</html>

@@ -94,6 +94,13 @@ var modifyhtml = {
             },
             // 旅食樂 m 300250 
             nownews_m_300250: function (data) {
+                //讓中文圖片url不會變亂碼
+                var img_dir = fs.readdirSync('./public/store/nownews_m_300250/' + socketID + '/images/' );
+                img_dir.forEach(element => {
+                    console.log(decodeURIComponent(escape(element)));
+                    fs.renameSync('./public/store/nownews_m_300250/' + socketID + '/images/' + element, './public/store/nownews_m_300250/' + socketID + '/images/' + decodeURIComponent(escape(element)));
+                });
+                
                 var $ = cheerio.load(data);
                 $(".etad").children().remove();
                 $(".etad").append('<div style="text-align: center;"><ins class="clickforceads" style="display:inline-block;width:300px;height:250px;" data-ad-zone="7930"></ins><script async type="text/javascript" src="//cdn.doublemax.net/js/init.js"></script></div>');
